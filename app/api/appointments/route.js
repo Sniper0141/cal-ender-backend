@@ -5,7 +5,7 @@ import { AppointmentSchema, AppointmentResponseSchema } from '@/app/lib/schema';
 // GET /api/appointments
 export async function GET() {
   try {
-    const appointments = await query('SELECT * FROM appointments ORDER BY startDateTime');
+    const appointments = await query('SELECT * FROM appointments ORDER BY "startDateTime"');
     return NextResponse.json(appointments);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch appointments' }, { status: 500 });
